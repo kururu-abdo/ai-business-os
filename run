@@ -1,0 +1,7 @@
+# Initialize a pristine state database engine test migrations run
+cd backend
+alembic revision --autogenerate -m "Initial baseline structure"
+alembic upgrade head
+
+# Start system engine loop
+uvicorn app.main:app --reload

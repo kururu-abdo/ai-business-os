@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.core.config import settings
-from app.core.logging import setup_logging
+from app.core.logger import setup_logging
 from app.api.main import router as api_router
 
 setup_logging()
