@@ -10,6 +10,6 @@ class Settings(BaseSettings):
     
     PROJECT_NAME: str = "AI Business OS"
     ENV: Literal["development", "staging", "production"] = "development"
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@db:5432/aios_db"
+    DATABASE_URL: str = "postgresql+asyncpg://ai_business_os:ai123456@db:5432/ai_business_os"
 
 settings = Settings()

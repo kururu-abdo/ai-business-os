@@ -6,6 +6,14 @@ from app.db.session import get_db
 
 router = APIRouter()
 
+
+@router.get("/")
+async def root():
+    return {
+        "name": "AI Business OS",
+        "version": "0.1.0",
+        "status": "running",
+    }
 @router.get("/health", status_code=200)
 async def health_check(response: Response, db: AsyncSession = Depends(get_db)):
     start_time = time.time()
