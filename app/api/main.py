@@ -1,9 +1,10 @@
 import time
 from fastapi import APIRouter, Depends, Response
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import configure_mappers
 from sqlalchemy.sql import text
 from app.db.session import get_db
-
+configure_mappers()
 router = APIRouter()
 
 
@@ -32,3 +33,6 @@ async def health_check(response: Response, db: AsyncSession = Depends(get_db)):
         
     health_status["duration_ms"] = round((time.time() - start_time) * 1000, 2)
     return health_status
+
+
+
